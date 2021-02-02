@@ -1,0 +1,29 @@
+[
+	{
+		"name": "nodecliac",
+		"repo": "https://github.com/cgabriel5/nodecliac",
+		"method": "git",
+		"description": "Easy Bash completion for CLI programs.",
+		"license": "MIT"
+	},
+	{
+		"name": "nimble",
+		"repo": "https://github.com/nim-lang/nimble",
+		"method": "git",
+		"tags": [
+			"app",
+			"binary",
+			"package",
+			"manager"
+		],
+		"description": "Nimble package manager",
+		"license": "MIT"
+	},
+	{
+		"name": "balena",
+		"repo": "https://github.com/cgabriel5/nodecliac",
+		"method": "git",
+		"description": "Easy Bash completion for CLI programs.",
+		"license": "MIT"
+	}
+]
