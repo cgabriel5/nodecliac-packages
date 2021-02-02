@@ -1,0 +1,43 @@
+# Nimble: [https://github.com/nim-lang/nimble#nimble-usage]
+# nimble --version = nimble v0.11.0 compiled at 2019-09-25 15:58:40
+# [https://github.com/nim-lang/nimble/blob/master/nimble.bash-completion]
+
+nimble = [
+	--help
+	--version
+	--accept
+	--reject
+	--ver
+	--nimbleDir=
+	--verbose
+	--debug
+	--noColor
+]
+
+nimble.install = [
+	--depsOnly
+	--passNim
+	default $("nimble list \| grep -v '^ ' \| tr -d ':'")
+]
+nimble.develop
+nimble.check
+nimble.init
+nimble.publish
+nimble.uninstall = [
+	--inclDeps
+	default $("nimble list -i \| perl -pne 's/\s+\[/\@/;s/\]//'")
+]
+nimble.build
+nimble.run
+nimble.c,
+nimble.cc,
+nimble.js = filedir '@(nim)'
+nimble.test = --continue
+nimble.doc
+nimble.doc2
+nimble.refresh
+nimble.search = --ver
+nimble.list = --ver|--installed
+nimble.tasks
+nimble.path = default $("nimble list -i \| cut -d' ' -f1")
+nimble.dump

@@ -1,0 +1,12 @@
+prettier-cli-watcher = [
+	--dir
+	--dtime
+	--config
+	--ignore
+	--notify?
+	--quiet?
+	--setup?
+	--dry?
+	--version?
+	--watcher=(chokidar hound)
+]
