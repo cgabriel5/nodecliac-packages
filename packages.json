@@ -1,14 +1,16 @@
 [
 	{
 		"name": "nodecliac",
-		"repo": "https://github.com/cgabriel5/nodecliac",
+		"repo": "https://github.com/cgabriel5/nodecliac-packages",
+		"scheme": "cgabriel5/nodecliac-packages#master/trunk/nodecliac",
 		"method": "git",
-		"description": "Easy Bash completion for CLI programs.",
+		"description": "nodecliac completion package for nodecliac command.",
 		"license": "MIT"
 	},
 	{
 		"name": "nimble",
-		"repo": "https://github.com/nim-lang/nimble",
+		"repo": "https://github.com/cgabriel5/nodecliac-packages",
+		"scheme": "cgabriel5/nodecliac-packages#master/trunk/nimble",
 		"method": "git",
 		"tags": [
 			"app",
@@ -16,14 +18,15 @@
 			"package",
 			"manager"
 		],
-		"description": "Nimble package manager",
+		"description": "nodecliac completion package for nimble command.",
 		"license": "MIT"
 	},
 	{
 		"name": "balena",
-		"repo": "https://github.com/cgabriel5/nodecliac",
+		"repo": "https://github.com/cgabriel5/nodecliac-packages",
+		"scheme": "cgabriel5/nodecliac-packages#master/trunk/balena",
 		"method": "git",
-		"description": "Easy Bash completion for CLI programs.",
+		"description": "nodecliac completion package for balena command.",
 		"license": "MIT"
 	}
 ]
