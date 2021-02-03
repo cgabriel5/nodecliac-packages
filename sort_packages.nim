@@ -2,7 +2,7 @@ from re import `=~`, re
 from algorithm import sort
 from os import `/`, splitPath
 from options import Option, isNone, option, get
-from json import `[]`, `%`, parseJSON, items, to, pretty
+from json import `[]`, `%`, parseJSON, items, to, pretty, JsonNode
 from strutils import toLower, join, splitLines, strip, repeat
 
 type
@@ -13,8 +13,14 @@ type
 const pkgname = "packages.json"
 let filepath = currentSourcePath().splitPath.head / pkgname
 let contents = readFile(filepath)
-let jdata = parseJSON(contents)
 var packages: seq[tuple[name: string, pkg: Package]] = @[]
+
+var jdata: JsonNode
+try:
+    jdata = parseJSON(contents)
+except:
+    let msg = getCurrentExceptionMsg()
+    echo "\e[31mError:\e[0m [JSON Parsing failed]: " & msg
 
 const empty_str = ""
 const empty_list: seq[string] = @[]
