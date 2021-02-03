@@ -2,33 +2,34 @@ from re import `=~`, re
 from algorithm import sort
 from os import `/`, splitPath
 from options import Option, isNone, option, get
+from json import `[]`, `%`, parseJSON, items, to, pretty
 from strutils import toLower, join, splitLines, strip, repeat
-from json import `[]`, `%`, parseJSON, items, to, pretty # getStr
 
 type
   Package = object
     name, repo, scheme, `method`, description, license: Option[string]
     tags: Option[seq[string]]
 
-let filepath = currentSourcePath().splitPath.head / "packages.json"
+const pkgname = "packages.json"
+let filepath = currentSourcePath().splitPath.head / pkgname
 let contents = readFile(filepath)
 let jdata = parseJSON(contents)
 var packages: seq[tuple[name: string, pkg: Package]] = @[]
 
-const empty: seq[string] = @[]
+const empty_str = ""
+const empty_list: seq[string] = @[]
 for item in items(jdata):
     var package = to(item, Package)
-    if package.name.isNone: package.name = option("")
-    if package.repo.isNone: package.repo = option("")
-    if package.scheme.isNone: package.scheme = option("")
-    if package.`method`.isNone: package.`method` = option("")
-    if package.description.isNone: package.description = option("")
-    if package.license.isNone: package.license = option("")
-    if package.tags.isNone: package.tags = option(empty)
+    if package.name.isNone: package.name = option(empty_str)
+    if package.repo.isNone: package.repo = option(empty_str)
+    if package.scheme.isNone: package.scheme = option(empty_str)
+    if package.`method`.isNone: package.`method` = option(empty_str)
+    if package.description.isNone: package.description = option(empty_str)
+    if package.license.isNone: package.license = option(empty_str)
+    if package.tags.isNone: package.tags = option(empty_list)
 
     var p: tuple[name: string, pkg: Package]
     p = (name: package.name.get(), pkg: package)
-    # p = (name: item["name"].getStr(""), pkg: package)
     packages.add(p)
 
 # [https://stackoverflow.com/a/6712058]
