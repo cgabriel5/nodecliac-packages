@@ -1,5 +1,5 @@
 {
 	"scripts": {
-		"packages_sort": "nim c -d:release -d:danger --opt:speed sort_packages.nim  && time ./sort_packages"
+		"packages_sort": "nim c -d:release -d:danger --opt:speed sort_packages.nim  && time ./sort_packages && rm sort_packages"
 	}
 }
